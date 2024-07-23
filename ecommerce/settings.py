@@ -22,7 +22,7 @@ INSTALLED_APPS = [
     # External Packages
     'rest_framework',
     # Internal Apps
-    # 'eccommerceapp',
+    'product_app',
 ]
 
 MIDDLEWARE = [
