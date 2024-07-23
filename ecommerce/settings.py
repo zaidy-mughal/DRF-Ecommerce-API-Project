@@ -1,6 +1,7 @@
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+from datetime import timedelta
 
 load_dotenv()
 
@@ -22,6 +23,7 @@ INSTALLED_APPS = [
     # External Packages
     'drf_spectacular',
     'rest_framework',
+    'rest_framework_simplejwt',
     # Internal Apps
     'product_app',
 ]
@@ -108,8 +110,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS":"drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_AUTHENTICATION_CLASSES":"rest_framework_simplejwt.authentication.JWTAuthentication",
+    "DEFAULT_PERMISSION_CLASSES":"rest_framework.permissions.IsAuthenticatedOrReadOnly",
 }
 
 SPECTACULAR_SETTINGS = {
     "TITLE":"Django DRF Ecommerce Project",
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME":timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME":timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS":False,
 }

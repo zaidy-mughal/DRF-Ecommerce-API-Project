@@ -1,5 +1,6 @@
 ### Django==5.0.7
 ### djangorestframework==3.15.2
+### djangorestframework-simplejwt==5.3.1
 
 ## These two packages are used to run and make tests in django
 ### pytest==8.3.1

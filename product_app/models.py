@@ -51,7 +51,6 @@ class ProductLine(models.Model):
 
 
 
-
 class ProductImage(models.Model):
     name = models.CharField(max_length=100)
     alternate_text = models.CharField(max_length=255)

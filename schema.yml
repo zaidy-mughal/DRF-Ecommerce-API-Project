@@ -462,6 +462,312 @@ paths:
       responses:
         '204':
           description: No response body
+  /api/productImage/:
+    get:
+      operationId: productImage_list
+      tags:
+      - productImage
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductImage'
+          description: ''
+    post:
+      operationId: productImage_create
+      tags:
+      - productImage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductImage'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductImage'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductImage'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductImage'
+          description: ''
+  /api/productImage/{id}/:
+    get:
+      operationId: productImage_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product image.
+        required: true
+      tags:
+      - productImage
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductImage'
+          description: ''
+    put:
+      operationId: productImage_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product image.
+        required: true
+      tags:
+      - productImage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductImage'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductImage'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductImage'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductImage'
+          description: ''
+    patch:
+      operationId: productImage_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product image.
+        required: true
+      tags:
+      - productImage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProductImage'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProductImage'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProductImage'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductImage'
+          description: ''
+    delete:
+      operationId: productImage_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product image.
+        required: true
+      tags:
+      - productImage
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/productLine/:
+    get:
+      operationId: productLine_list
+      tags:
+      - productLine
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductLine'
+          description: ''
+    post:
+      operationId: productLine_create
+      tags:
+      - productLine
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductLine'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductLine'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductLine'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductLine'
+          description: ''
+  /api/productLine/{id}/:
+    get:
+      operationId: productLine_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product line.
+        required: true
+      tags:
+      - productLine
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductLine'
+          description: ''
+    put:
+      operationId: productLine_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product line.
+        required: true
+      tags:
+      - productLine
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductLine'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProductLine'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProductLine'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductLine'
+          description: ''
+    patch:
+      operationId: productLine_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product line.
+        required: true
+      tags:
+      - productLine
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProductLine'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProductLine'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProductLine'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductLine'
+          description: ''
+    delete:
+      operationId: productLine_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this product line.
+        required: true
+      tags:
+      - productLine
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
 components:
   schemas:
     Brand:
@@ -485,28 +791,13 @@ components:
         name:
           type: string
           maxLength: 100
-        lft:
-          type: integer
-          readOnly: true
-        rght:
-          type: integer
-          readOnly: true
-        tree_id:
-          type: integer
-          readOnly: true
-        level:
-          type: integer
-          readOnly: true
         parent:
-          type: integer
-          nullable: true
+          type: string
+          readOnly: true
       required:
       - id
-      - level
-      - lft
       - name
-      - rght
-      - tree_id
+      - parent
     PatchedBrand:
       type: object
       properties:
@@ -525,27 +816,19 @@ components:
         name:
           type: string
           maxLength: 100
-        lft:
-          type: integer
-          readOnly: true
-        rght:
-          type: integer
-          readOnly: true
-        tree_id:
-          type: integer
-          readOnly: true
-        level:
-          type: integer
-          readOnly: true
         parent:
-          type: integer
-          nullable: true
+          type: string
+          readOnly: true
     PatchedProduct:
       type: object
       properties:
         id:
           type: integer
           readOnly: true
+        brand:
+          $ref: '#/components/schemas/Brand'
+        category:
+          $ref: '#/components/schemas/Category'
         name:
           type: string
           maxLength: 100
@@ -553,17 +836,55 @@ components:
           type: string
         is_digital:
           type: boolean
-        brand:
+    PatchedProductImage:
+      type: object
+      properties:
+        id:
           type: integer
-        category:
-          type: integer
+          readOnly: true
+        product_line:
+          $ref: '#/components/schemas/ProductLine'
+        name:
+          type: string
+          maxLength: 100
+        alternate_text:
+          type: string
+          maxLength: 255
+        url:
+          type: string
+          format: uri
           nullable: true
+          description: Upload a Picture of Product
+    PatchedProductLine:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        product:
+          $ref: '#/components/schemas/Product'
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        stock_keeping_unit:
+          type: string
+          maxLength: 100
+        stock_quantity:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
     Product:
       type: object
       properties:
         id:
           type: integer
           readOnly: true
+        brand:
+          $ref: '#/components/schemas/Brand'
+        category:
+          $ref: '#/components/schemas/Category'
         name:
           type: string
           maxLength: 100
@@ -571,15 +892,61 @@ components:
           type: string
         is_digital:
           type: boolean
-        brand:
-          type: integer
-        category:
-          type: integer
-          nullable: true
       required:
       - brand
+      - category
       - id
       - name
+    ProductImage:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        product_line:
+          $ref: '#/components/schemas/ProductLine'
+        name:
+          type: string
+          maxLength: 100
+        alternate_text:
+          type: string
+          maxLength: 255
+        url:
+          type: string
+          format: uri
+          nullable: true
+          description: Upload a Picture of Product
+      required:
+      - alternate_text
+      - id
+      - name
+      - product_line
+    ProductLine:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        product:
+          $ref: '#/components/schemas/Product'
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
+        stock_keeping_unit:
+          type: string
+          maxLength: 100
+        stock_quantity:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
+      required:
+      - id
+      - price
+      - product
+      - stock_keeping_unit
+      - stock_quantity
   securitySchemes:
     basicAuth:
       type: http
