@@ -14,12 +14,16 @@ class Category(MPTTModel):
         return self.name
 
 
+
+
 class Brand(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
 
     # this is used to view info in Django Admin
     def __str__(self) -> str:
         return self.name
+
+
 
 
 class Product(models.Model):
@@ -35,3 +39,23 @@ class Product(models.Model):
     # this is used to view info in Django Admin
     def __str__(self) -> str:
         return self.name
+
+
+
+
+class ProductLine(models.Model):
+    price = models.DecimalField(max_digits=10,decimal_places=2)
+    stock_keeping_unit = models.CharField(unique=True,max_length=100)
+    stock_quantity = models.IntegerField()
+    product = models.ForeignKey(Product,on_delete=models.CASCADE)
+
+
+
+
+class ProductImage(models.Model):
+    name = models.CharField(max_length=100)
+    alternate_text = models.CharField(max_length=255)
+    url = models.ImageField(
+        help_text="Upload a Picture of Product", blank=True, null=True
+    )
+    product_line = models.ForeignKey(ProductLine, on_delete=models.CASCADE)
