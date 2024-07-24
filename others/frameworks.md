@@ -15,6 +15,6 @@
 ## This framework collects the data of all possible endpoints and view it in Swagger UI and This is used to make documentation of our Api for other developers
 ### drf-spectacular==0.27.2
 
-## installed to this used models.ImageField() in the ProductImage Model
+## installed to this used models.ImageField() in the ProductImage Model(Not used for some reasons)
 ### pillow==10.4.0
 

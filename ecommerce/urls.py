@@ -8,11 +8,10 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 router = DefaultRouter()
-router.register("category", views.CategoryView)
-router.register("product", views.ProductView)
-router.register("brand", views.BrandView)
-router.register("productLine",views.ProductLineView)
-router.register("productImage",views.ProductImageView)
+router.register("category", views.CategoryView, basename="category")
+router.register("product", views.ProductView, basename="product")
+router.register("brand", views.BrandView, basename="brand")
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),

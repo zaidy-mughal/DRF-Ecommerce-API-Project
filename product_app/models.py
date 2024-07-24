@@ -30,6 +30,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     is_digital = models.BooleanField(default=False)
+    price = models.DecimalField(max_digits=10,decimal_places=2)
     # by on_delete: CASCADE if we delete brand all the products will deleted and vice versa is not true
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     category = TreeForeignKey(
@@ -42,19 +43,3 @@ class Product(models.Model):
 
 
 
-
-class ProductLine(models.Model):
-    price = models.DecimalField(max_digits=10,decimal_places=2)
-    stock_keeping_unit = models.CharField(unique=True,max_length=100)
-    stock_quantity = models.IntegerField()
-    product = models.ForeignKey(Product,on_delete=models.CASCADE)
-
-
-
-class ProductImage(models.Model):
-    name = models.CharField(max_length=100)
-    alternate_text = models.CharField(max_length=255)
-    url = models.ImageField(
-        help_text="Upload a Picture of Product", blank=True, null=True
-    )
-    product_line = models.ForeignKey(ProductLine, on_delete=models.CASCADE)

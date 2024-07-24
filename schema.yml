@@ -5,9 +5,9 @@ info:
 paths:
   /api/brand/:
     get:
-      operationId: brand_list
+      operationId: api_brand_list
       tags:
-      - brand
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -22,9 +22,9 @@ paths:
                   $ref: '#/components/schemas/Brand'
           description: ''
     post:
-      operationId: brand_create
+      operationId: api_brand_create
       tags:
-      - brand
+      - api
       requestBody:
         content:
           application/json:
@@ -50,7 +50,7 @@ paths:
           description: ''
   /api/brand/{id}/:
     get:
-      operationId: brand_retrieve
+      operationId: api_brand_retrieve
       parameters:
       - in: path
         name: id
@@ -59,7 +59,7 @@ paths:
         description: A unique integer value identifying this brand.
         required: true
       tags:
-      - brand
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -72,7 +72,7 @@ paths:
                 $ref: '#/components/schemas/Brand'
           description: ''
     put:
-      operationId: brand_update
+      operationId: api_brand_update
       parameters:
       - in: path
         name: id
@@ -81,7 +81,7 @@ paths:
         description: A unique integer value identifying this brand.
         required: true
       tags:
-      - brand
+      - api
       requestBody:
         content:
           application/json:
@@ -106,7 +106,7 @@ paths:
                 $ref: '#/components/schemas/Brand'
           description: ''
     patch:
-      operationId: brand_partial_update
+      operationId: api_brand_partial_update
       parameters:
       - in: path
         name: id
@@ -115,7 +115,7 @@ paths:
         description: A unique integer value identifying this brand.
         required: true
       tags:
-      - brand
+      - api
       requestBody:
         content:
           application/json:
@@ -139,7 +139,7 @@ paths:
                 $ref: '#/components/schemas/Brand'
           description: ''
     delete:
-      operationId: brand_destroy
+      operationId: api_brand_destroy
       parameters:
       - in: path
         name: id
@@ -148,7 +148,7 @@ paths:
         description: A unique integer value identifying this brand.
         required: true
       tags:
-      - brand
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -158,9 +158,9 @@ paths:
           description: No response body
   /api/category/:
     get:
-      operationId: category_list
+      operationId: api_category_list
       tags:
-      - category
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -175,9 +175,9 @@ paths:
                   $ref: '#/components/schemas/Category'
           description: ''
     post:
-      operationId: category_create
+      operationId: api_category_create
       tags:
-      - category
+      - api
       requestBody:
         content:
           application/json:
@@ -203,7 +203,7 @@ paths:
           description: ''
   /api/category/{id}/:
     get:
-      operationId: category_retrieve
+      operationId: api_category_retrieve
       parameters:
       - in: path
         name: id
@@ -212,7 +212,7 @@ paths:
         description: A unique integer value identifying this category.
         required: true
       tags:
-      - category
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -225,7 +225,7 @@ paths:
                 $ref: '#/components/schemas/Category'
           description: ''
     put:
-      operationId: category_update
+      operationId: api_category_update
       parameters:
       - in: path
         name: id
@@ -234,7 +234,7 @@ paths:
         description: A unique integer value identifying this category.
         required: true
       tags:
-      - category
+      - api
       requestBody:
         content:
           application/json:
@@ -259,7 +259,7 @@ paths:
                 $ref: '#/components/schemas/Category'
           description: ''
     patch:
-      operationId: category_partial_update
+      operationId: api_category_partial_update
       parameters:
       - in: path
         name: id
@@ -268,7 +268,7 @@ paths:
         description: A unique integer value identifying this category.
         required: true
       tags:
-      - category
+      - api
       requestBody:
         content:
           application/json:
@@ -292,7 +292,7 @@ paths:
                 $ref: '#/components/schemas/Category'
           description: ''
     delete:
-      operationId: category_destroy
+      operationId: api_category_destroy
       parameters:
       - in: path
         name: id
@@ -301,7 +301,7 @@ paths:
         description: A unique integer value identifying this category.
         required: true
       tags:
-      - category
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -311,9 +311,9 @@ paths:
           description: No response body
   /api/product/:
     get:
-      operationId: product_list
+      operationId: api_product_list
       tags:
-      - product
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -328,9 +328,9 @@ paths:
                   $ref: '#/components/schemas/Product'
           description: ''
     post:
-      operationId: product_create
+      operationId: api_product_create
       tags:
-      - product
+      - api
       requestBody:
         content:
           application/json:
@@ -356,7 +356,7 @@ paths:
           description: ''
   /api/product/{id}/:
     get:
-      operationId: product_retrieve
+      operationId: api_product_retrieve
       parameters:
       - in: path
         name: id
@@ -365,7 +365,7 @@ paths:
         description: A unique integer value identifying this product.
         required: true
       tags:
-      - product
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -378,7 +378,7 @@ paths:
                 $ref: '#/components/schemas/Product'
           description: ''
     put:
-      operationId: product_update
+      operationId: api_product_update
       parameters:
       - in: path
         name: id
@@ -387,7 +387,7 @@ paths:
         description: A unique integer value identifying this product.
         required: true
       tags:
-      - product
+      - api
       requestBody:
         content:
           application/json:
@@ -412,7 +412,7 @@ paths:
                 $ref: '#/components/schemas/Product'
           description: ''
     patch:
-      operationId: product_partial_update
+      operationId: api_product_partial_update
       parameters:
       - in: path
         name: id
@@ -421,7 +421,7 @@ paths:
         description: A unique integer value identifying this product.
         required: true
       tags:
-      - product
+      - api
       requestBody:
         content:
           application/json:
@@ -445,7 +445,7 @@ paths:
                 $ref: '#/components/schemas/Product'
           description: ''
     delete:
-      operationId: product_destroy
+      operationId: api_product_destroy
       parameters:
       - in: path
         name: id
@@ -454,7 +454,7 @@ paths:
         description: A unique integer value identifying this product.
         required: true
       tags:
-      - product
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -462,11 +462,128 @@ paths:
       responses:
         '204':
           description: No response body
-  /api/productImage/:
+  /api/schema:
     get:
-      operationId: productImage_list
+      operationId: api_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
       tags:
-      - productImage
+      - api
       security:
       - cookieAuth: []
       - basicAuth: []
@@ -474,300 +591,104 @@ paths:
       responses:
         '200':
           content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/ProductImage'
+                type: object
+                additionalProperties: {}
           description: ''
+  /gettoken/:
     post:
-      operationId: productImage_create
+      operationId: gettoken_create
+      description: |-
+        Takes a set of user credentials and returns an access and refresh JSON web
+        token pair to prove the authentication of those credentials.
       tags:
-      - productImage
+      - gettoken
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ProductImage'
+              $ref: '#/components/schemas/TokenObtainPair'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/ProductImage'
+              $ref: '#/components/schemas/TokenObtainPair'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/ProductImage'
+              $ref: '#/components/schemas/TokenObtainPair'
         required: true
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
-      responses:
-        '201':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProductImage'
-          description: ''
-  /api/productImage/{id}/:
-    get:
-      operationId: productImage_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this product image.
-        required: true
-      tags:
-      - productImage
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProductImage'
+                $ref: '#/components/schemas/TokenObtainPair'
           description: ''
-    put:
-      operationId: productImage_update
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this product image.
-        required: true
-      tags:
-      - productImage
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ProductImage'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ProductImage'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ProductImage'
-        required: true
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProductImage'
-          description: ''
-    patch:
-      operationId: productImage_partial_update
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this product image.
-        required: true
-      tags:
-      - productImage
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedProductImage'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedProductImage'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PatchedProductImage'
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProductImage'
-          description: ''
-    delete:
-      operationId: productImage_destroy
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this product image.
-        required: true
-      tags:
-      - productImage
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
-      responses:
-        '204':
-          description: No response body
-  /api/productLine/:
-    get:
-      operationId: productLine_list
-      tags:
-      - productLine
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/ProductLine'
-          description: ''
+  /refreshtoken/:
     post:
-      operationId: productLine_create
+      operationId: refreshtoken_create
+      description: |-
+        Takes a refresh type JSON web token and returns an access type JSON web
+        token if the refresh token is valid.
       tags:
-      - productLine
+      - refreshtoken
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ProductLine'
+              $ref: '#/components/schemas/TokenRefresh'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/ProductLine'
+              $ref: '#/components/schemas/TokenRefresh'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/ProductLine'
+              $ref: '#/components/schemas/TokenRefresh'
         required: true
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
-      responses:
-        '201':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProductLine'
-          description: ''
-  /api/productLine/{id}/:
-    get:
-      operationId: productLine_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this product line.
-        required: true
-      tags:
-      - productLine
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProductLine'
+                $ref: '#/components/schemas/TokenRefresh'
           description: ''
-    put:
-      operationId: productLine_update
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this product line.
-        required: true
+  /verifytoken/:
+    post:
+      operationId: verifytoken_create
+      description: |-
+        Takes a token and indicates if it is valid.  This view provides no
+        information about a token's fitness for a particular use.
       tags:
-      - productLine
+      - verifytoken
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ProductLine'
+              $ref: '#/components/schemas/TokenVerify'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/ProductLine'
+              $ref: '#/components/schemas/TokenVerify'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/ProductLine'
+              $ref: '#/components/schemas/TokenVerify'
         required: true
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProductLine'
+                $ref: '#/components/schemas/TokenVerify'
           description: ''
-    patch:
-      operationId: productLine_partial_update
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this product line.
-        required: true
-      tags:
-      - productLine
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedProductLine'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedProductLine'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PatchedProductLine'
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ProductLine'
-          description: ''
-    delete:
-      operationId: productLine_destroy
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        description: A unique integer value identifying this product line.
-        required: true
-      tags:
-      - productLine
-      security:
-      - cookieAuth: []
-      - basicAuth: []
-      - {}
-      responses:
-        '204':
-          description: No response body
 components:
   schemas:
     Brand:
@@ -836,45 +757,6 @@ components:
           type: string
         is_digital:
           type: boolean
-    PatchedProductImage:
-      type: object
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        product_line:
-          $ref: '#/components/schemas/ProductLine'
-        name:
-          type: string
-          maxLength: 100
-        alternate_text:
-          type: string
-          maxLength: 255
-        url:
-          type: string
-          format: uri
-          nullable: true
-          description: Upload a Picture of Product
-    PatchedProductLine:
-      type: object
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        product:
-          $ref: '#/components/schemas/Product'
-        price:
-          type: string
-          format: decimal
-          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
-        stock_keeping_unit:
-          type: string
-          maxLength: 100
-        stock_quantity:
-          type: integer
-          maximum: 9223372036854775807
-          minimum: -9223372036854775808
-          format: int64
     Product:
       type: object
       properties:
@@ -897,56 +779,46 @@ components:
       - category
       - id
       - name
-    ProductImage:
+    TokenObtainPair:
       type: object
       properties:
-        id:
-          type: integer
+        username:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+        access:
+          type: string
           readOnly: true
-        product_line:
-          $ref: '#/components/schemas/ProductLine'
-        name:
+        refresh:
           type: string
-          maxLength: 100
-        alternate_text:
-          type: string
-          maxLength: 255
-        url:
-          type: string
-          format: uri
-          nullable: true
-          description: Upload a Picture of Product
+          readOnly: true
       required:
-      - alternate_text
-      - id
-      - name
-      - product_line
-    ProductLine:
+      - access
+      - password
+      - refresh
+      - username
+    TokenRefresh:
       type: object
       properties:
-        id:
-          type: integer
+        access:
+          type: string
           readOnly: true
-        product:
-          $ref: '#/components/schemas/Product'
-        price:
+        refresh:
           type: string
-          format: decimal
-          pattern: ^-?\d{0,8}(?:\.\d{0,2})?$
-        stock_keeping_unit:
-          type: string
-          maxLength: 100
-        stock_quantity:
-          type: integer
-          maximum: 9223372036854775807
-          minimum: -9223372036854775808
-          format: int64
+          writeOnly: true
       required:
-      - id
-      - price
-      - product
-      - stock_keeping_unit
-      - stock_quantity
+      - access
+      - refresh
+    TokenVerify:
+      type: object
+      properties:
+        token:
+          type: string
+          writeOnly: true
+      required:
+      - token
   securitySchemes:
     basicAuth:
       type: http
