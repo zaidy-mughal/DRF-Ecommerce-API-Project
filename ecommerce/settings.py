@@ -146,7 +146,7 @@ REST_FRAMEWORK = {
 
 # this gives the title to Swagger UI documentation
 SPECTACULAR_SETTINGS = {
-    "TITLE":"Django RestFramework API Project",
+    "TITLE":"DjangoRestFramework API Documentation",
 }
 
 # this overrides the default time of JWT
