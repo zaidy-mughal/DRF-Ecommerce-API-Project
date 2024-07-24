@@ -16,6 +16,7 @@ router.register("brand", views.BrandView, basename="brand")
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
+    path("api-auth/",include('rest_framework.urls')),
     # this link direct download a .yaml schema 
     path("gettoken/",TokenObtainPairView.as_view(),name="token_obtain"),
     path("refreshtoken/",TokenRefreshView.as_view(),name="token_refresh"),

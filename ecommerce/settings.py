@@ -109,29 +109,49 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 REST_FRAMEWORK = {
+    # this is used to generate schema or Documentation of Api providing Swagger UI
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+
+    # this is used to Authenticate on JsonWebToken Base
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
+
+    # this class is used to give full permissions to Authenticated User and Read Only to Others
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticatedOrReadOnly",
     ),
+
+    # this is used to Throttle the number of requests sent at one time by a user or anonymous
     "DEFAULT_THROTTLING_CLASSES": (
         "rest_framework.throttling.AnonRateThrottle",
         "rest_framework.throttling.UserRateThrottle",
     ),
+
+    # this defines the throttle rates for Throttle Classes
     "DEFAULT_THROTTLE_RATES": {
         "anon": "50/day",
         "user": "20/hour",
     },
+
+    # this is used to add Pagination to our api
+    "DEFAULT_PAGINATION_CLASS": "product_app.pagination.CustomPagination",
+
+    # this is used to apply Search Filters and Ordering Filters
+    "DEFAULT_FILTER_BACKENDS": [
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
+    ],
 }
 
+# this gives the title to Swagger UI documentation
 SPECTACULAR_SETTINGS = {
-    "TITLE":"Django DRF Ecommerce Project",
+    "TITLE":"Django RestFramework API Project",
 }
 
+# this overrides the default time of JWT
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME":timedelta(minutes=5),
+    "ACCESS_TOKEN_LIFETIME":timedelta(hours=1),
     "REFRESH_TOKEN_LIFETIME":timedelta(days=1),
     "ROTATE_REFRESH_TOKENS":False,
 }
