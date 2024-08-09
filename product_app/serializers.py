@@ -1,5 +1,17 @@
 from rest_framework import serializers
 from .models import Category, Product, Brand
+from django.contrib.auth.models import User
+
+
+
+class UserSerializer(serializers.ModelSerializer):
+    products = serializers.PrimaryKeyRelatedField(many=True, queryset=Product.objects.all())
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'products']
+
+
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -7,6 +19,7 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['id','name','parent']
+
 
 
 class BrandSerializer(serializers.ModelSerializer):

@@ -134,11 +134,13 @@ REST_FRAMEWORK = {
 
     # this is used to Authenticate on JsonWebToken Base
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        # "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
     ),
 
     # this class is used to give full permissions to Authenticated User and Read Only to Others
     "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.IsAdminUser",
         "rest_framework.permissions.IsAuthenticatedOrReadOnly",
     ),
 
@@ -154,8 +156,8 @@ REST_FRAMEWORK = {
         "user": "20/hour",
     },
 
-    # this is used to add Pagination to our api
-    "DEFAULT_PAGINATION_CLASS": "product_app.pagination.CustomPagination",
+    # # this is used to add Pagination to our api
+    # "DEFAULT_PAGINATION_CLASS": "product_app.pagination.CustomPagination",
 
     # this is used to apply Search Filters and Ordering Filters
     "DEFAULT_FILTER_BACKENDS": [

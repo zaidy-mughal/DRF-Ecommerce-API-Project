@@ -17,6 +17,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
     path("api-auth/",include('rest_framework.urls')),
+    path("api/user",views.UserList.as_view()),
+    path("api/user/<int:pk>",views.UserRetrieve.as_view()),
     # this link direct download a .yaml schema
     path("gettoken/",TokenObtainPairView.as_view(),name="token_obtain"),
     path("refreshtoken/",TokenRefreshView.as_view(),name="token_refresh"),
