@@ -139,10 +139,11 @@ REST_FRAMEWORK = {
     ),
 
     # this class is used to give full permissions to Authenticated User and Read Only to Others
-    "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.IsAdminUser",
-        "rest_framework.permissions.IsAuthenticatedOrReadOnly",
-    ),
+    # "DEFAULT_PERMISSION_CLASSES": (
+        # "rest_framework.permissions.IsAdminUser",
+        # "rest_framework.permissions.IsAuthenticatedOrReadOnly",
+        # "product_app.permissions.IsOwnerOrReadOnly",
+    # ),
 
     # this is used to Throttle the number of requests sent at one time by a user or anonymous
     "DEFAULT_THROTTLING_CLASSES": (

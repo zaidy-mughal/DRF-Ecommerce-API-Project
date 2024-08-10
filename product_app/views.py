@@ -9,7 +9,8 @@ from drf_spectacular.utils import extend_schema
 from .pagination import CustomPagination
 ## these are already defined in settings.py file globally
 # from rest_framework_simplejwt.authentication import JWTAuthentication
-# from rest_framework.permissions import IsAuthenticatedOrReadOnly,DjangoModelPermissionsOrAnonReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly,DjangoModelPermissionsOrAnonReadOnly
+from .permissions import IsOwnerOrReadOnly
 # from rest_framework.throttling import AnonRateThrottle,UserRateThrottle
 # from rest_framework.filters import SearchFilter,OrderingFilter
 
@@ -17,14 +18,14 @@ from .pagination import CustomPagination
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
+    permission_classes = [IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly]
 
 
 @extend_schema(tags=["User"])
 class UserRetrieve(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
+    permission_classes = [IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly]
 
 
 @extend_schema(tags=["Category"])
@@ -34,7 +35,7 @@ class CategoryView(viewsets.ModelViewSet):
     ordering_fields = ['name']
     search_fields = ['name']
     pagination_class = CustomPagination
-    
+    permission_classes = [IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly]
 
 
 @extend_schema(tags=["Brand"])
@@ -44,7 +45,7 @@ class BrandView(viewsets.ModelViewSet):
     search_fields = ['name']
     ordering_fields = ['name']
     pagination_class = CustomPagination
-
+    permission_classes = [IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly]
 
 
 @extend_schema(tags=["Product"])
@@ -54,6 +55,7 @@ class ProductView(viewsets.ModelViewSet):
     search_fields = ['name']
     ordering_fields = '__all__'
     pagination_class = CustomPagination
+    permission_classes = [IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
