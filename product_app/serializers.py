@@ -31,6 +31,7 @@ class BrandSerializer(serializers.ModelSerializer):
 class ProductSerializer(serializers.ModelSerializer):
     brand = BrandSerializer(read_only=True)
     category = CategorySerializer(read_only=True)
+    owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = Product
         fields = "__all__"

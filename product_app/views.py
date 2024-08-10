@@ -13,14 +13,14 @@ from .pagination import CustomPagination
 # from rest_framework.throttling import AnonRateThrottle,UserRateThrottle
 # from rest_framework.filters import SearchFilter,OrderingFilter
 
-@extend_schema(tags="UserList")
+@extend_schema(tags=["UserList"])
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 
-@extend_schema(tags="User")
+@extend_schema(tags=["User"])
 class UserRetrieve(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -54,3 +54,6 @@ class ProductView(viewsets.ModelViewSet):
     search_fields = ['name']
     ordering_fields = '__all__'
     pagination_class = CustomPagination
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)

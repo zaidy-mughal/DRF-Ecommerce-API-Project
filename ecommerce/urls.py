@@ -15,14 +15,14 @@ router.register("brand", views.BrandView, basename="brand")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(router.urls)),
+    path("", include(router.urls)),
     path("api-auth/",include('rest_framework.urls')),
-    path("api/user",views.UserList.as_view()),
-    path("api/user/<int:pk>",views.UserRetrieve.as_view()),
+    path("user/",views.UserList.as_view()),
+    path("user/<int:pk>",views.UserRetrieve.as_view()),
     # this link direct download a .yaml schema
     path("gettoken/",TokenObtainPairView.as_view(),name="token_obtain"),
     path("refreshtoken/",TokenRefreshView.as_view(),name="token_refresh"),
     path("verifytoken/",TokenVerifyView.as_view(),name="token_verify"),
-    path("api/schema", SpectacularAPIView.as_view(), name="schema"),
-    path("api/schema/docs", SpectacularSwaggerView.as_view(url_name="schema")),
+    path("schema", SpectacularAPIView.as_view(), name="schema"),
+    path("schema/docs", SpectacularSwaggerView.as_view(url_name="schema")),
 ]
