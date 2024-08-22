@@ -40,11 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # External Packages
+    'stripe',
     'drf_spectacular',
     'rest_framework',
     'rest_framework_simplejwt',
     # Internal Apps
     'product_app',
+    'payments',
 ]
 
 MIDDLEWARE = [
