@@ -12,6 +12,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
+#this is used to integrate stripe (for here test key)
+STRIPE_API_KEY = "sk_test_51PpgiVKV8rd8qWy6ySNG5de8HBzyApLglOz1iExnmeQZUNDnZ6uKoGjx9DwNjqQBp2KXPdVmOyieVCdqCPSNk0Wb007fw1G62q"
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
